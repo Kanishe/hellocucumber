@@ -6,7 +6,7 @@ import io.cucumber.java.en.When;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class OtusGetInfo {
+public class OtusContactEmailStepdefs {
 
     @When("When I select tab {string}")
     public void SelectTabName(String tabName) {
