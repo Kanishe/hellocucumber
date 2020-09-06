@@ -1,21 +1,23 @@
 package com.cucumber.steps;
 
-import com.cucumber.pages.InfoPage;
-import com.cucumber.pages.OtusMainPage;
+import com.cucumber.pages.OtusInfoPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class OtusGetInfo {
+
     @When("When I select tab {string}")
-    public void whenISelectTabTabName(String tabName) {
-        OtusMainPage otusMainPage = new OtusMainPage();
-        otusMainPage.selectStream(tabName);
+    public void SelectTabName(String tabName) {
+         OtusInfoPage otusInfoPage = new OtusInfoPage();
+        otusInfoPage.selectContactPage(tabName);
     }
 
     @Then("I should see {string} on {string} page")
-    public void iShouldSeeInfoOnTabNamePage() {
-        InfoPage infoPage = new InfoPage();
-
+    public void iShouldSeeInfoOnTabNamePage(String contactInfo,String page) {
+        OtusInfoPage infoPage = new OtusInfoPage();
+        assertThat(infoPage.getEmail()).isEqualTo(contactInfo);
+        assertThat(infoPage.getContactTitlePage()).isEqualTo(page);
     }
 }
