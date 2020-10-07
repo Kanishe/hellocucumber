@@ -8,6 +8,6 @@ Feature: Validate Otus stream navigation
     Then I should see <numberOfCourses> courses on '<tabName>' page
     Examples:
       | tabName                     | numberOfCourses |
-      | Информационная безопасность | 6               |
+      | Информационная безопасность | 7               |
       | Data Science                | 10              |
       | Управление                  | 7               |
